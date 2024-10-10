@@ -1,8 +1,32 @@
 :root {
-
+--primary-color: #9379F8;
+--current-task-color : #F7C860;
+--finished-task-color: #8CD373;
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+
+#logo{
+  width: 3.5em;
+  height: 3.5em;
+}
+header{
+  display:flex;
+  padding:1em;
+  justify-content: space-between;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li a{
+  text-decoration: none;
+}
+
+#form-section{
+  display: flex;
 }
