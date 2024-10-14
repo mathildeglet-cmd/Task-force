@@ -1,32 +1,67 @@
 :root {
---primary-color: #9379F8;
---current-task-color : #F7C860;
---finished-task-color: #8CD373;
+	--primary-color: #9379f8;
+	--current-task-color: #f7c860;
+	--finished-task-color: #8cd373;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
-#logo{
-  width: 3.5em;
-  height: 3.5em;
+#logo {
+	width: 3.5em;
+	height: 3.5em;
 }
-header{
-  display:flex;
-  padding:1em;
-  justify-content: space-between;
+
+h1 {
+	font-size: 1.2em;
+	color: white;
+}
+
+header {
+	background-color: var(--primary-color);
+	display: flex;
+	padding: 0.5em;
+	justify-content: space-between;
+	align-items: center;
 }
 
 header nav ul {
-  list-style: none;
+	list-style: none;
 }
 
-header nav ul li a{
-  text-decoration: none;
+header nav ul li a {
+	text-decoration: none;
 }
 
-#form-section{
-  display: flex;
+#form-section {
+	margin: 1em;
+	background-color: #9379f8;
+	padding: 0.5em;
+}
+
+#add-task {
+	width: 25em;
+	height: 2em;
+	margin-bottom: 1em;
+}
+
+#status-category-article {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+}
+
+#send-button {
+	background-color: #8cd373;
+	border-radius: 0.5em;
+	width: 25em;
+	height: 5em;
+}
+
+#filter {
+	display: flex;
+	margin: 1em;
+	gap: 1em;
 }

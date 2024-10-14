@@ -16,11 +16,11 @@
         <nav>
             <ul>
                 <li><a href="about">A propos</a></li>
-            </ul>
-            <ul>
+            
+        
                 <li><a href="manage-account">Gestion du compte</a></li>
-            </ul>
-            <ul><li><a href="contact-us">Nous contacter</a></li>
+            
+                <li><a href="contact-us">Nous contacter</a></li>
             </ul>
         </nav>
     </header>
@@ -29,17 +29,30 @@
         <!-- formulaire -->
         <section id="form-section">
             <article id="form-article">
-                <input type="text" placeholder="Nom de la tâche">
-                <h3>Statut</h3>
-                <select name="category" id="select-category"></select>
-                <h3>Catégorie</h3>
+                
+                    <input id="add-task" placeholder="Nom de la tâche">
+                    <div id="status-category-article">
+                        <h3>Statut</h3>
+                            <select name="status-article" id="select-status-article">
+                            <option value="unstarted">Non démarré</option>
+                            <option value="current">En cours</option>
+                            <option value="finished">Terminé</option>
+                            </select>
+                        <h3>Catégorie</h3>
+                        <select name="category-article" id="select-category-article">
+                            <option value="Project 1">Projet 1</option>
+                            <option value="Project 2">Projet 2</option>
+                            <option value="Project 3">Projet 3</option>
+                        </select>
+                        <button id="send-button">Créer ma tâche</button>
+                    </div>
             </article>
-            <button>Envoyer</button>
+            
         </section>
 
-        <section>
+        <section id="filter">
             <h3>Filtrer</h3>
-            <select name="category" id="select-category"> <option value="" selected>Sélectionner un statut</option>         
+            <select name="status-filter" id="select-status-filter"> <option value="" selected>Sélectionner un statut</option>         
             <option value="unstarted">Non démarré</option>
             <option value="current">En cours</option>
             <option value="finished">Terminé</option>
