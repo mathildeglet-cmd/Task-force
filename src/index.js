@@ -8,6 +8,7 @@ menuButton.addEventListener('click',function(){
 });
 
 
+
 // Supprimer une tâche
 const deleteButton = document.querySelector//recupérer ID bouton supprimer
 
