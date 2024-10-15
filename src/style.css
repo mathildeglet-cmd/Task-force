@@ -1,7 +1,19 @@
+@font-face {
+  font-family: 'hind';
+  src: url(../public/font/Hind\,Roboto/Hind);
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url(../public/font/Hind\,Roboto/Roboto;)
+}
+
 :root {
 --primary-color: #9379F8;
 --current-task-color : #F7C860;
 --finished-task-color: #8CD373;
+--title-bg-color : #EAEEF8;
+--title-font : Hind, sans-serif;
+--text-font : Roboto, sans-serif;
 }
 
 * {
@@ -9,24 +21,58 @@
   padding: 0;
 }
 
-#logo{
-  width: 3.5em;
-  height: 3.5em;
-}
-header{
-  display:flex;
-  padding:1em;
-  justify-content: space-between;
+.dropDownMenu {
+  border: solid 1px var(--primary-color);
+  border-radius: 10px;
+  display: none;
+  position: absolute;
 }
 
-header nav ul {
-  list-style: none;
+li {
+  font-family: var(--text-font);
+  line-height: 1.5em;
+  padding: 0.8em;
 }
-
-header nav ul li a{
+li a {
   text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-#form-section{
+.visible {
+  display: block;
+}
+
+.statut {
+  @media screen and (min-width: 968px) {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2vh 2vw 2vh 2vw;
+  gap: 2em;
+    
+  }
+}
+h2 {
+  font-family: var(--title-font);
+  background-color: var(--title-bg-color);
+  border: solid 1px var(--title-bg-color) ;
+  border-radius: 10px;
+  margin: 2vh 2vw 2vh 2vw;
+
+  @media screen and (min-width: 968px) {
+    width: 25vw;
+   
+  }
+}
+
+footer {
+  background-color: var(--primary-color);
+}
+
+footer p {
+  text-align: center;
+  font-family: var(--text-font);
+  line-height: 1.5em;
 }
