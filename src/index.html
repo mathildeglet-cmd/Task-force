@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Todo list</title>
-    <link rel="icon" type="image/png" href="../public/images/favicon/favicon.ico">
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../public/images/favicon/favicon.ico"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
+<<<<<<< HEAD
         <img src="../public/images/task.png" alt="une liste de tâche en couleur" id="logo">
         <h1>TODO LIST</h1>
         <nav>
@@ -56,34 +60,67 @@
             <option value="unstarted">Non démarré</option>
             <option value="current">En cours</option>
             <option value="finished">Terminé</option>
+=======
+      <img
+        src="../public/images/task.png"
+        alt="une liste de tâche en couleur"
+        id="logo"
+      />
+      <h1>TODO LIST</h1>
+      <nav>
+        <img class="bouton_menu" src="../public/images/bouton_menu.png" alt="bouton menu">
+        <ul class="dropDownMenu">
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">Gestion du compte</a></li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- formulaire -->
+      <section>
+        <article></article>
+        <button>Envoyer</button>
+      </section>
+
+      <section>
+        <h3>Filtrer</h3>
+        <select name="category" id="select-category">
+          <option value="" selected>Sélectionner un statut</option>
+          <option value="unstarted">Non démarré</option>
+          <option value="current">En cours</option>
+          <option value="finished">Terminé</option>
+>>>>>>> 42a381e86c364381d0e15c3f5248575160e11046
         </select>
-        </section>
+      </section>
 
-        <!-- Les taches non commencées -->
-        <section>
-            <article>
+    <section class="statut"> <!-- Les taches non commencées -->
+      <section class="non_demarre">
+        <h2>Non demarré</h2>
+        <article></article>
+      </section>
 
-            </article>
-        </section>
+      <!-- Les taches en cours -->
+      <section class="en_cours">
+        <h2>En cours</h2>
+        <article></article>
+      </section>
 
-        <!-- Les taches en cours -->
-        <section>
-            <article>
-
-            </article>
-        </section>
-
-        <!-- Les taches en cours -->
-        <section>
-            <article>
-        
-            </article>
-        </section>
+      <!-- Les taches terminées -->
+      <section class="terminees">
+        <h2>Terminé</h2>
+        <article></article>
+      </section>
+    </section> 
     </main>
     <footer>
-        
+      <section>
+        <p>&copy;copyright 2024</p>
+        <p>Images from <a href="#"></a></p>
+        <p>Task Force Team</p>
+      </section>
     </footer>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>
