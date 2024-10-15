@@ -21,11 +21,21 @@
 	padding: 0;
 }
 
+#logo{
+	width: 5em;
+}
+
+h1{
+	font-size: 1.5em;
+	color: white;
+}
+
 .dropDownMenu {
   border: solid 1px black;
   border-radius: 10px;
   display: none;
   position: absolute;
+
 }
 
 li {
@@ -34,6 +44,7 @@ li {
   padding: 0.8em;
   list-style: none;
 }
+
 li a {
   text-decoration: none;
   color: black;
