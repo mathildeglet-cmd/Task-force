@@ -22,7 +22,7 @@
 }
 
 .dropDownMenu {
-  border: solid 1px var(--primary-color);
+  border: solid 1px black;
   border-radius: 10px;
   display: none;
   position: absolute;
@@ -32,6 +32,7 @@ li {
   font-family: var(--text-font);
   line-height: 1.5em;
   padding: 0.8em;
+  list-style: none;
 }
 li a {
   text-decoration: none;
