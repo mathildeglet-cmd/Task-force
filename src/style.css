@@ -8,17 +8,17 @@
 }
 
 :root {
---primary-color: #9379F8;
---current-task-color : #F7C860;
---finished-task-color: #8CD373;
+	--primary-color: #9379f8;
+	--current-task-color: #f7c860;
+	--finished-task-color: #8cd373;
 --title-bg-color : #EAEEF8;
 --title-font : Hind, sans-serif;
 --text-font : Roboto, sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .dropDownMenu {
