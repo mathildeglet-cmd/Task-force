@@ -27,13 +27,6 @@ header {
 	align-items: center;
 }
 
-header nav ul {
-	list-style: none;
-}
-
-header nav ul li a {
-	text-decoration: none;
-}
 
 #form-section {
 	margin: 1em;
