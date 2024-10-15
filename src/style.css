@@ -29,13 +29,18 @@ h1{
 	font-size: 1.5em;
 	color: white;
 }
+.bouton_menu{
+  height: 3.5em;
+  width: auto;
+}
 
 .dropDownMenu {
   border: solid 1px black;
   border-radius: 10px;
   display: none;
   position: absolute;
-
+  right: 1em;
+  background-color: white;
 }
 
 li {
@@ -50,6 +55,11 @@ li a {
   color: black;
   font-weight: bold;
   font-size: 1.2em;
+}
+
+h2 {
+  background-color: var(--title-bg-color);
+  color: black;
 }
 
 .visible {
