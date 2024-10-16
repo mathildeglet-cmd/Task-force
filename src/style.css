@@ -29,30 +29,75 @@ h1{
 	font-size: 1.5em;
 	color: white;
 }
+.bouton_menu{
+  height: 3.5em;
+  width: auto;
+}
 
 .dropDownMenu {
-  border: solid 1px var(--primary-color);
+  border: solid 1px black;
   border-radius: 10px;
   display: none;
   position: absolute;
-
+  right: 1em;
+  background-color: white;
 }
 
 li {
   font-family: var(--text-font);
   line-height: 1.5em;
   padding: 0.8em;
+  list-style: none;
 }
 
 li a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 1em;
+}
+
+h2 {
+  background-color: var(--title-bg-color);
+  border: solid 1px var(--title-bg-color);
+  font-family: var(--title-font);
+  border-radius: 3px;
+  margin : 2vh 4vw 2vh 4vw;
+
+  @media screen and (min-width : 960px) {
+    width: 20vw;
+  }
+
+  
+}
+
+.status {
+  @media screen and (min-width : 960px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+}
+}
+
+footer {
+  background-color: var(--primary-color);
+}
+
+footer p {
+  width: 80vw;
+  margin: auto;
+  font-family: var(--text-font);
+  line-height: 1.5em;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .visible {
   display: block;
+  color : var(--title-bg-color)
 }
 
 header {

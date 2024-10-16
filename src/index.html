@@ -14,69 +14,78 @@
 
   <body>
     <header>
-        <img src="../public/images/task.png" alt="une liste de tâche en couleur" id="logo">
-        <h1>TODO LIST</h1> 
-        <nav>
-            <img class="bouton_menu" src="../public/images/bouton_menu.png" alt="bouton menu">
-            <ul class="dropDownMenu">
-              <li><a href="#">A propos</a></li>
-              <li><a href="#">Gestion du compte</a></li>
-              <li><a href="#">Nous contacter</a></li>
-            </ul>
-          </nav>
+      <img
+        src="../public/images/task.png"
+        alt="une liste de tâche en couleur"
+        id="logo"
+      />
+      <h1>TODO LIST</h1>
+      <nav>
+        <img
+          class="bouton_menu"
+          src="../public/images/bouton_menu.png"
+          alt="bouton menu"
+        />
+        <ul class="dropDownMenu">
+          <li><a class="a_propos" href="#">A propos</a></li>
+          <li><a href="#">Gestion du compte</a></li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <!-- formulaire -->
-        <section id="form-section">
-            <article id="form-article">
-                
-                    <input id="add-task" placeholder="Nom de la tâche">
-                    <div id="status-category-article">
-                        <h3>Statut</h3>
-                            <select name="status-article" id="select-status-article">
-                            <option value="unstarted">Non démarré</option>
-                            <option value="current">En cours</option>
-                            <option value="finished">Terminé</option>
-                            </select>
-                        <h3>Catégorie</h3>
-                        <select name="category-article" id="select-category-article">
-                            <option value="Project 1">Projet 1</option>
-                            <option value="Project 2">Projet 2</option>
-                            <option value="Project 3">Projet 3</option>
-                        </select>
-                        <button id="send-button">Créer ma tâche</button>
-                    </div>
-            </article>
-            
+      <!-- formulaire -->
+      <section id="form-section">
+        <article id="form-article">
+          <input id="add-task" placeholder="Nom de la tâche" />
+          <div id="status-category-article">
+            <h3>Statut</h3>
+            <select name="status-article" id="select-status-article">
+              <option value="unstarted">Non démarré</option>
+              <option value="current">En cours</option>
+              <option value="finished">Terminé</option>
+            </select>
+            <h3>Catégorie</h3>
+            <select name="category-article" id="select-category-article">
+              <option value="Project 1">Projet 1</option>
+              <option value="Project 2">Projet 2</option>
+              <option value="Project 3">Projet 3</option>
+            </select>
+            <button id="send-button">Créer ma tâche</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="filter">
+        <h3>Filtrer</h3>
+        <select name="status-filter" id="select-status-filter">
+          <option value="" selected>Sélectionner un statut</option>
+          <option value="unstarted">Non démarré</option>
+          <option value="current">En cours</option>
+          <option value="finished">Terminé</option>
+        </select>
+      </section>
+
+      <div class="status">
+        <!-- les taches non commencées -->
+        <section class="non_demarre">
+          <h2>Non demarré</h2>
+          <article></article>
         </section>
 
-        <section id="filter">
-            <h3>Filtrer</h3>
-            <select name="status-filter" id="select-status-filter"> <option value="" selected>Sélectionner un statut</option>         
-            <option value="unstarted">Non démarré</option>
-            <option value="current">En cours</option>
-            <option value="finished">Terminé</option>
+        <!-- Les taches en cours -->
+        <section class="en_cours">
+          <h2>En cours</h2>
+          <article></article>
+        </section>
 
-      
-    <section class="statut"> <!-- Les taches non commencées -->
-      <section class="non_demarre">
-        <h2>Non demarré</h2>
-        <article></article>
-      </section>
-
-      <!-- Les taches en cours -->
-      <section class="en_cours">
-        <h2>En cours</h2>
-        <article></article>
-      </section>
-
-      <!-- Les taches terminées -->
-      <section class="terminees">
-        <h2>Terminé</h2>
-        <article></article>
-      </section>
-    </section> 
+        <!-- Les taches terminées -->
+        <section class="terminees">
+          <h2>Terminé</h2>
+          <article></article>
+        </section>
+      </div>
     </main>
     <footer>
       <section>
