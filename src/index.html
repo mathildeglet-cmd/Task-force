@@ -27,8 +27,19 @@
           alt="bouton menu"
         />
         <ul class="dropDownMenu">
-          <li><a class="a_propos" href="#">A propos</a></li>
-          <li><a href="#">Gestion du compte</a></li>
+          <li>
+            <a
+              href="#"
+              onclick="return confirm
+            ('Projet créé par la team Task Force, composée de Mathilde, Celio et Jp. Projet proposé dans le cadre de la formation WCS, projet n°1')"
+              >A propos</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="return confirm ('Fonctionnalité à venir')"
+              >Gestion du compte</a
+            >
+          </li>
           <li><a href="#">Nous contacter</a></li>
         </ul>
       </nav>
@@ -47,19 +58,19 @@
                             <option value="current">En cours</option>
                             <option value="finished">Terminé</option>
                             </select>
-                        <h3>Catégorie</h3>
+                        <!-- <h3>Catégorie</h3>
                         <select name="category-article" id="select-category-article">
                             <option value="Project 1">Projet 1</option>
                             <option value="Project 2">Projet 2</option>
                             <option value="Project 3">Projet 3</option>
                         </select>
-                        <button id="send-button">Créer ma tâche</button>
+                        <button id="send-button">Créer ma tâche</button> -->
                     </div>
             </article>
             
         </section>
 
-        <section id="filter">
+        <!-- <section id="filter">
             <h3>Filtrer</h3>
             <select name="status-filter" id="select-status-filter"> 
             <option value="" selected>Sélectionner un statut</option>         
@@ -67,25 +78,27 @@
             <option value="current">En cours</option>
             <option value="finished">Terminé</option>
             </select>
-        </section>
-    <section class="statut"> <!-- Les taches non commencées -->
-      <section class="non_demarre">
+        </section> -->
+
+    <section class="task"> 
+      <!-- Les taches non commencées -->
+      <!-- <section class="non_demarre">
         <h2>Non demarré</h2>
         <article></article>
       </section>
 
         <!-- Les taches en cours -->
-        <section class="en_cours">
+        <!-- <section class="en_cours">
           <h2>En cours</h2>
           <article></article>
-        </section>
+        </section> -->
 
         <!-- Les taches terminées -->
-        <section class="terminees">
+        <!-- <section class="terminees">
           <h2>Terminé</h2>
           <article></article>
-        </section>
-      </div>
+        </section> -->
+      </section>
     </main>
     <footer>
       <section>
