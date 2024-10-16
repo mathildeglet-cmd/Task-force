@@ -7,9 +7,9 @@ const dropDownMenu = document.querySelector(".dropDownMenu")
 
 
 // mettre un display none sur le menu déroulant
-/* menuButton.addEventListener('click', function () {
+ menuButton.addEventListener('click', () => {
     dropDownMenu.classList.toggle("visible")//ajouter .visible au css avec un display block
-}); */
+}); 
 
 
 // Supprimer une tâche
