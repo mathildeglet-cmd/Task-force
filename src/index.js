@@ -49,6 +49,7 @@ function createNewTask() {
     /* 5 - créer un élément button avec le label Edit */
     /* 6 - créer un élément button avec le label Delete */
 
+
     const nonDemarre = document.querySelector(".non_demarre");
     const article = document.createElement("article");
     article.classList.add("figure-class");
