@@ -1,19 +1,19 @@
 @font-face {
-  font-family: 'hind';
-  src: url(../public/font/Hind\,Roboto/Hind);
+	font-family: "hind";
+	src: url(../public/font/Hind\,Roboto/Hind);
 }
 @font-face {
-  font-family: 'Roboto';
-  src: url(../public/font/Hind\,Roboto/Roboto;)
+	font-family: "Roboto";
+	src: url(../public/font/Hind\,Roboto/Roboto;);
 }
 
 :root {
 	--primary-color: #9379f8;
 	--current-task-color: #f7c860;
 	--finished-task-color: #8cd373;
---title-bg-color : #EAEEF8;
---title-font : Hind, sans-serif;
---text-font : Roboto, sans-serif;
+	--title-bg-color: #eaeef8;
+	--title-font: Hind, sans-serif;
+	--text-font: Roboto, sans-serif;
 }
 
 * {
@@ -21,38 +21,37 @@
 	padding: 0;
 }
 
-#logo{
+#logo {
 	width: 5em;
 }
 
-h1{
+h1 {
 	font-size: 1.5em;
 	color: white;
 }
 
 .dropDownMenu {
-  border: solid 1px var(--primary-color);
-  border-radius: 10px;
-  display: none;
-  position: absolute;
-
+	border: solid 1px var(--primary-color);
+	border-radius: 10px;
+	display: none;
+	position: absolute;
 }
 
 li {
-  font-family: var(--text-font);
-  line-height: 1.5em;
-  padding: 0.8em;
+	font-family: var(--text-font);
+	line-height: 1.5em;
+	padding: 0.8em;
 }
 
 li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 1.2em;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 1.2em;
 }
 
 .visible {
-  display: block;
+	display: block;
 }
 
 header {
@@ -63,11 +62,14 @@ header {
 	align-items: center;
 }
 
-
 #form-section {
 	margin: 1em;
 	background-color: #9379f8;
 	padding: 0.5em;
+}
+
+#form-article {
+	align-items: center;
 }
 
 #add-task {
@@ -82,11 +84,19 @@ header {
 	gap: 0.5em;
 }
 
+button {
+	all: unset;
+}
+
 #send-button {
 	background-color: #8cd373;
 	border-radius: 0.5em;
-	width: 25em;
-	height: 5em;
+	width: 20em;
+	height: 3em;
+	padding: 0;
+	font-family: var(--text-font);
+	font-size: 1.2em;
+	text-align: center;
 }
 
 #filter {

@@ -31,7 +31,7 @@
         <section id="form-section">
             <article id="form-article">
                 
-                    <input id="add-task" placeholder="Nom de la tâche">
+                    <textarea name="" id="add-task" placeholder="Nom de la tâche" rows="2" cols="33" ></textarea>
                     <div id="status-category-article">
                         <h3>Statut</h3>
                             <select name="status-article" id="select-status-article">
@@ -53,12 +53,13 @@
 
         <section id="filter">
             <h3>Filtrer</h3>
-            <select name="status-filter" id="select-status-filter"> <option value="" selected>Sélectionner un statut</option>         
+            <select name="status-filter" id="select-status-filter"> 
+            <option value="" selected>Sélectionner un statut</option>         
             <option value="unstarted">Non démarré</option>
             <option value="current">En cours</option>
             <option value="finished">Terminé</option>
-
-      
+            </select>
+        </section>
     <section class="statut"> <!-- Les taches non commencées -->
       <section class="non_demarre">
         <h2>Non demarré</h2>
