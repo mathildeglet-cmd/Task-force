@@ -37,30 +37,21 @@ function createNewTask() {
 
     newElement.labelTask = labelTask.value;
     newElement.choiceStatus = choiceStatus.options[choiceStatus.selectedIndex].textContent;
-    newElement.choiceCategory = choiceCategory.options[choiceCategory.selectedIndex].textContent;
+    // newElement.choiceCategory = choiceCategory.options[choiceCategory.selectedIndex].textContent;
 
     taskList.push(newElement);
 
     /* ajouter les éléments dans les sections */
-    /* 1 - créer un élement article avec class dans un element section */
-    /* 2 - créer un élément input initialisé avec la valeur labelTask */
+    /* 1 - créer un élement article avec class dans un element section tasks */
+    /* 2 - créer un élément input/texarea initialisé avec la valeur labelTask */
     /* 3 - créer un élément select initialisé avec la valeur choisceStatus */
-    /* 4 - créer un élément select initialisé avec la valeur choisceCategory */
-    /* 5 - créer un élément button avec le label Edit */
-    /* 6 - créer un élément button avec le label Delete */
+    /* 4 - créer un élément button avec le label Edit */
+    /* 5 - créer un élément button avec le label Delete */
 
-    /* ici ajouter la la function dysplayTask qui va lire la dernière rtache ajoutée dans taskList
-    et l'ajouter dans la bonnne section "status" */
-
-
-
-
-
+    /* ici ajouter la la function dysplayTask qui va lire la dernière tache ajoutée dans taskList
+    et l'ajouter dans la section "article" */
 
     /* input ou textarea */
-
-
-
 
 
     const nonDemarre = document.querySelector(".non_demarre");
