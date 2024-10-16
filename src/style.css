@@ -1,8 +1,12 @@
 @font-face {
 	font-family: "hind";
 	src: url(../public/font/Hind\,Roboto/Hind);
+	font-family: "hind";
+	src: url(../public/font/Hind\,Roboto/Hind);
 }
 @font-face {
+	font-family: "Roboto";
+	src: url(../public/font/Hind\,Roboto/Roboto;);
 	font-family: "Roboto";
 	src: url(../public/font/Hind\,Roboto/Roboto;);
 }
@@ -14,6 +18,9 @@
 	--title-bg-color: #eaeef8;
 	--title-font: Hind, sans-serif;
 	--text-font: Roboto, sans-serif;
+	--title-bg-color: #eaeef8;
+	--title-font: Hind, sans-serif;
+	--text-font: Roboto, sans-serif;
 }
 
 * {
@@ -22,9 +29,11 @@
 }
 
 #logo {
+#logo {
 	width: 5em;
 }
 
+h1 {
 h1 {
 	font-size: 1.5em;
 	color: white;
@@ -123,6 +132,10 @@ header {
 	align-items: center;
 }
 
+#form-article {
+	align-items: center;
+}
+
 #add-task {
 	width: 20em;
 	height: 2em;
@@ -139,9 +152,19 @@ button {
 	all: unset;
 }
 
+button {
+	all: unset;
+}
+
 #send-button {
 	background-color: #8cd373;
 	border-radius: 0.5em;
+	width: 20em;
+	height: 3em;
+	padding: 0;
+	font-family: var(--text-font);
+	font-size: 1.2em;
+	text-align: center;
 	width: 20em;
 	height: 3em;
 	padding: 0;
