@@ -49,18 +49,54 @@ function createNewTask() {
     /* 5 - créer un élément button avec le label Edit */
     /* 6 - créer un élément button avec le label Delete */
 
+    /* ici ajouter la la function dysplayTask qui va lire la dernière rtache ajoutée dans taskList
+    et l'ajouter dans la bonnne section "status" */
+
+
+
+
+
+
+    /* input ou textarea */
+
+
+
+
 
     const nonDemarre = document.querySelector(".non_demarre");
+
     const article = document.createElement("article");
-    article.classList.add("figure-class");
+    article.classList.add("status-article");
     nonDemarre.appendChild(article);
 
-    const articleTitle = document.createElement("h2");
-    articleTitle.classList.add("article-title");
-    articleTitle.textContent = labelTask.value;
-    nonDemarre.appendChild(articleTitle);
+    /* label du select */
+
+    const labelSelect = document.createElement("label");
+    labelSelect.htmlFor.add("")
+
+    /* ajout du select status */
 
 
+
+    const articleSelectStatus = document.createElement("select");
+    articleSelectStatus.classList.add("select-status");
+    /*  articleSelectStatus.textContent = labelTask.value; */
+    article.appendChild(articleSelectStatus);
+
+    /* ajouter les options du status */
+
+    const optionSelectStatus = document.createElement("option");
+    optionSelectStatus.classList.add("")
+
+
+
+    /* label du select category */
+
+    /* ajout du select category */
+
+    /* ajout du button edit */
+
+    /* ajout du button delete */
 
     console.log(newElement);
 
