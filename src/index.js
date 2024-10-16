@@ -9,10 +9,16 @@ menuButton.addEventListener('click',function(){
 
 
 
-// Supprimer une tâche
-const deleteButton = document.querySelector//recupérer ID bouton supprimer
 
+/* Supprimer une tâche
+const deleteButton = document.querySelector
 deleteButton.addEventListener("click",function(){
     
-})
+})*/
+
+const task = []
+const addTask = document.querySelector("#add-task")
+const taskInput = addTask.value
+
+console.log(taskInput)
 
