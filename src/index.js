@@ -108,4 +108,4 @@ return deleteAlert === "oui"? deleteCurrentArticle.remove() :
 		deleteAlert === "non"? "" : alert `Merci de renseigner : oui ou non`;
 
 })};
-deleteTask();
+deleteTask(); 
