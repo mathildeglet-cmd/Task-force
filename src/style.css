@@ -177,3 +177,10 @@ button {
 	margin: 1em;
 	gap: 1em;
 }
+
+/*test bouton supprimer*/
+#my-article{
+	display: flex;
+	height:  100px;
+	width: 100;
+}

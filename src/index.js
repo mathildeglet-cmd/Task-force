@@ -3,135 +3,151 @@ const taskList = [];
 let taskId = 0;
 
 // Bouton menu
+//const menuButton = document.querySelector(".bouton_menu"); //recuperer ID boutton menu
+//const dropDownMenu = document.querySelector(".dropDownMenu");
+
+// mettre un display none sur le menu déroulant
+//menuButton.addEventListener("click", () => {
+//	dropDownMenu.classList.toggle("visible"); //ajouter .visible au css avec un display block
+//});
+
+// Supprimer une tâche
+const deleteButton = document.querySelector; //recupérer ID bouton supprimer
+
+/* deleteButton.addEventListener("click", function () {
+
+}) */
+
 const menuButton = document.querySelector(".bouton_menu");
 const dropDownMenu = document.querySelector(".dropDownMenu");
 
-menuButton.addEventListener("click", function () {
-    dropDownMenu.classList.toggle("visible");
+menuButton.addEventListener("click",  () => {
+	dropDownMenu.classList.toggle("visible");
 });
 
 function createNewTask() {
+	const newElement = {};
 
-    const newElement = {};
+	const labelTask = document.querySelector("#add-task");
+	const selectStatus = document.querySelector("#select-status-article");
 
-    const labelTask = document.querySelector("#add-task");
-    const selectStatus = document.querySelector("#select-status-article");
+	/* si aucun texte saisi, message alert puit sortie de la fonction */
 
-    /* si aucun texte saisi, message alert puit sortie de la fonction */
+	if (!labelTask.value) {
+		alert("Saisir un texte pour créer une tâche");
+		return;
+	}
 
-    if (!labelTask.value) {
-        alert("Saisir un texte pour créer une tâche");
-        return;
-    }
+	/* ajout du nouveau bloc dans */
+	taskId += 1; // incrementer la valeur de l'id
+	newElement.id = taskId;
+	newElement.idArticle = `task-${taskId}`;
+	newElement.labelTask = labelTask.value;
+	newElement.selectStatus = selectStatus.value;
+	
+	taskList.push(newElement);
 
-    /* ajout du nouveau bloc dans */
-    taskId += 1; // incrementer la valeur de l'id
-    newElement.id = taskId
-    newElement.labelTask = labelTask.value;
-    newElement.selectStatus = selectStatus.value;
-
-    taskList.push(newElement);
-
-    return newElement;
+	return newElement;
 }
-
 
 /* function pour afficher les blocs tasks */
 
 function displayNewTask(taskList) {
+	const lastElment = taskList.length - 1;
+	const newTask = taskList[lastElment];
 
-    const lastElment = taskList.length - 1;
-    const newTask = taskList[lastElment];
+	/* ajouter les éléments dans les sections */
 
-    /* ajouter les éléments dans les sections */
+	/* 3 - créer un élément select initialisé avec la valeur choisceStatus */
+	/* 4 - créer un élément button avec le label Edit */
 
-    /* 3 - créer un élément select initialisé avec la valeur choisceStatus */
-    /* 4 - créer un élément button avec le label Edit */
+	let classTask = "";
+	let labelStatus = "";
 
-    let classTask = "";
-    let labelStatus = "";
+	/* déterminer le status pour ajouter le nom de class correspondant dans la balise article */
 
-    /* déterminer le status pour ajouter le nom de class correspondant dans la balise article */
+	if (newTask.selectStatus === "unstarted") {
+		classTask = "task-nonDemarre";
+		labelStatus = "Non démarré";
+	}
 
-    if (newTask.selectStatus === "unstarted") {
-        classTask = "task-nondDemarre";
-        labelStatus = "Non démarré";
-    }
+	if (newTask.selectStatus === "current") {
+		classTask = "task-enCours";
+		labelStatus = "En cours";
+	}
 
-    if (newTask.selectStatus === "current") {
-        classTask = "task-enCours";
-        labelStatus = "En cours";
-    }
+	if (newTask.selectStatus === "finished") {
+		classTask = "task-termine";
+		labelStatus = "Terminé";
+	}
 
-    if (newTask.selectStatus === "finished") {
-        classTask = "task-termine";
-        labelStatus = "Terminé";
-    }
+	const task = document.querySelector(".tasks");
 
-    const task = document.querySelector(".tasks");
+	const article = document.createElement("article");
+	article.id = `task-${newTask.id}`;
+	article.classList.add(classTask);
+	task.appendChild(article);
 
-    const article = document.createElement("article");
-    article.classList.add(classTask);
-    task.appendChild(article);
+	/* label du select */
 
-    /* label du select */
+	
+	/* ajout du textarea */
 
-    //const labelSelect = document.createElement("label");
-    // labelSelect.htmlFor.add("");
+	const taskTextArea = document.createElement("textarea");
+	taskTextArea.id = "taskText";
+	taskTextArea.rows = 2;
+	taskTextArea.cols = 33;
+	taskTextArea.value = newTask.labelTask;
+	taskTextArea.disabled = true;
+	article.appendChild(taskTextArea);
 
-    /* ajout du textarea */
+	/* ajouter le libellé du statut dans la tache crée */
 
-    const taskTextArea = document.createElement("textarea");
-    taskTextArea.id = "taskText";
-    taskTextArea.rows = 2;
-    taskTextArea.cols = 33
-    taskTextArea.value = newTask.labelTask;
-    taskTextArea.disabled = true;
-    article.appendChild(taskTextArea);
+	const displayStatus = document.createElement("h3");
+	displayStatus.classList.add("label-status");
+	displayStatus.textContent = `Tâche ${labelStatus}`;
+	article.appendChild(displayStatus);
 
-    /* ajouter le libellé du statut dans la tache crée */
+	/* ajout du button edit */
 
-    const displayStatus = document.createElement("h3");
-    displayStatus.classList.add("label-status");
-    displayStatus.textContent = `Tâche ${labelStatus}`;
-    article.appendChild(displayStatus);
+	const buttonEdit = document.createElement("button");
+	buttonEdit.classList.add("edit-button");
+	buttonEdit.id = newTask.id;
+	buttonEdit.textContent = " Edit ";
+	article.appendChild(buttonEdit);
 
+	/* ecouter edit-button */
+	buttonEdit.addEventListener("click", () =>
+		alert(`Edit tache ${newTask.labelTask} ID : ${newTask.id}`),
+	);
 
-    /* ajout du button edit */
+	/* ajout du button delete */
 
-    const buttonEdit = document.createElement("button");
-    buttonEdit.classList.add("edit-button");
-    buttonEdit.id = newTask.id;
-    buttonEdit.textContent = " Edit ";
-    article.appendChild(buttonEdit);
+	const buttonDelete = document.createElement("button");
+	buttonDelete.classList.add("delete-button");
+	buttonDelete.id = newTask.id;
+	buttonDelete.textContent = " Delete ";
+	article.appendChild(buttonDelete);
 
-    /* ecouter edit-button */
-    buttonEdit.addEventListener("click", () => alert(`Edit tache ${newTask.labelTask} ID : ${newTask.id}`));
+	/* ecouter delete-button */
 
-    /* ajout du button delete */
+	buttonDelete.addEventListener("click", () =>{
+		const idValue = `task-${newTask.id}`;
+		deleteTask(idValue);
+	}
+		
+	);
 
-    const buttonDelete = document.createElement("button");
-    buttonDelete.classList.add("delete-button");
-    buttonDelete.id = newTask.id;
-    buttonDelete.textContent = " Delete ";
-    article.appendChild(buttonDelete);
+	//const articleSelectStatus = document.createElement("select");
+	//articleSelectStatus.classList.add("select-status");
+	/*  articleSelectStatus.textContent = labelTask.value; */
+	//article.appendChild(articleSelectStatus);
 
-    /* ecouter delete-button */
-    buttonDelete.addEventListener("click", () => alert(`Delete tache ${newTask.labelTask} ID : ${newTask.id}`));
+	/* ajouter les options du status */
 
-
-    //const articleSelectStatus = document.createElement("select");
-    //articleSelectStatus.classList.add("select-status");
-    /*  articleSelectStatus.textContent = labelTask.value; */
-    //article.appendChild(articleSelectStatus);
-
-    /* ajouter les options du status */
-
-    //const optionSelectStatus = document.createElement("option");
-    //optionSelectStatus.classList.add("");
+	//const optionSelectStatus = document.createElement("option");
+	//optionSelectStatus.classList.add("");
 }
-
-
 
 /* ecouter send-button */
 
@@ -144,5 +160,22 @@ sendButton.addEventListener("click", () => {
 });
 
 
+function deleteTask(articleId) { 
+	
+		const articleToDelete = document.querySelector(`#${articleId}`);
+		const deleteAlert = confirm(
+			"Etes-vous sûr de vouloir supprimer cette tâche ?",
+		);
+
+		if(deleteAlert){
+			articleToDelete.remove();
+			const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
+			console.log(findArticle);
+		}
+		 
+
+			   
+	
+}
 
 
