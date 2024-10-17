@@ -90,7 +90,22 @@ function createNewTask() {
 
 /* ecouter send-button */
 
-const sendButton = document.querySelector("#send-button");
+/*const sendButton = document.querySelector("#send-button");
 sendButton.addEventListener("click", () => {
 	const newTask = createNewTask();
-});
+});*/
+
+function deleteTask (){
+    //récupération du bouton edit
+const deleteButton = document.querySelector('#delete-task');
+// édition du texte au click de la souris
+deleteButton.addEventListener('click', e => {
+	//récupération de l'article
+//const deleteArticle = document.querySelector('article');
+const deleteCurrentArticle = e.target;
+const deleteAlert = prompt('Etes-vous sûr de vouloir supprimer cette tâche ?');
+return deleteAlert === "oui"? deleteCurrentArticle.remove() :
+		deleteAlert === "non"? "" : alert `Merci de renseigner : oui ou non`;
+
+})};
+deleteTask();
