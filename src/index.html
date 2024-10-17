@@ -1,49 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Todo list</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="../public/images/favicon/favicon.ico"
-    />
-  </head>
 
-  <body>
-    <header>
-      <img
-        src="../public/images/task.png"
-        alt="une liste de tâche en couleur"
-        id="logo"
-      />
-      <h1>TODO LIST</h1>
-      <nav>
-        <img
-          class="bouton_menu"
-          src="../public/images/bouton_menu.png"
-          alt="bouton menu"
-        />
-        <ul class="dropDownMenu">
-          <li>
-            <a
-              href="#"
-              onclick="return confirm
-            ('Projet créé par la team Task Force, composée de Mathilde, Celio et Jp. Projet proposé dans le cadre de la formation WCS, projet n°1')"
-              >A propos</a
-            >
-          </li>
-          <li>
-            <a href="#" onclick="return confirm ('Fonctionnalité à venir')"
-              >Gestion du compte</a
-            >
-          </li>
-          <li><a href="#">Nous contacter</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Todo list</title>
+  <link rel="icon" type="image/png" href="../public/images/favicon/favicon.ico" />
+</head>
+
+<body>
+  <header>
+    <img src="../public/images/task.png" alt="une liste de tâche en couleur" id="logo" />
+    <h1>TODO LIST</h1>
+    <nav>
+      <img class="bouton_menu" src="../public/images/bouton_menu.png" alt="bouton menu" />
+      <ul class="dropDownMenu">
+        <li>
+          <a href="#"
+            onclick="return confirm
+            ('Projet créé par la team Task Force, composée de Mathilde, Celio et Jp. Projet proposé dans le cadre de la formation WCS, projet n°1')">A
+            propos</a>
+        </li>
+        <li>
+          <a href="#" onclick="return confirm ('Fonctionnalité à venir')">Gestion du compte</a>
+        </li>
+        <li><a href="#">Nous contacter</a></li>
+      </ul>
+    </nav>
+  </header>
 
     <main>
         <!-- formulaire -->
@@ -74,28 +59,25 @@
             </select>
         </section> 
 
-    <section class="task"> 
+    <section class="tasks">
       <!-- Les taches non commencées -->
       <!-- <section class="non_demarre">
         <h2>Non demarré</h2>
         <article></article>
-      </section>
+      </section> -->
 
-        <!-- Les taches en cours -->
-        <!-- <section class="en_cours">
+      <!-- Les taches en cours -->
+      <!-- <section class="en_cours">
           <h2>En cours</h2>
           <article></article>
         </section> -->
 
-        <!-- Les taches terminées -->
-        <!-- <section class="terminees">
+      <!-- Les taches terminées -->
+      <!-- <section class="terminees">
           <h2>Terminé</h2>
           <article></article>
         </section> -->
-        <article id="my-article">
-          <h2>Ma tâche</h2>
-           <button id="delete-task">Supprimer</button>
-        </article>
+
     </section>
 
     <!--test bouton edit -->
