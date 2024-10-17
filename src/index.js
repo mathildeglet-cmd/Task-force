@@ -166,11 +166,14 @@ function deleteTask(articleId) {
 		const deleteAlert = confirm(
 			"Etes-vous sûr de vouloir supprimer cette tâche ?",
 		);
+			console.log(taskList);
+			console.log(articleId);
 
 		if(deleteAlert){
 			articleToDelete.remove();
-			const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
-			console.log(findArticle);
+			//const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
+			const findArticle = taskList.find(task=>task.idArticle === articleId);
+			console.log(findArticle); 
 		}
 		 
 
