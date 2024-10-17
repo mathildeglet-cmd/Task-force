@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo list</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../public/images/favicon/favicon.ico"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Todo list</title>
-  <link rel="icon" type="image/png" href="../public/images/favicon/favicon.ico" />
-</head>
-
-<body>
-  <header>
-    <img src="../public/images/task.png" alt="une liste de tâche en couleur" id="logo" />
-    <h1>TODO LIST</h1>
-    <nav>
-      <img class="bouton_menu" src="../public/images/bouton_menu.png" alt="bouton menu" />
-      <ul class="dropDownMenu">
-        <li>
-          <a href="#"
-            onclick="return confirm
-            ('Projet créé par la team Task Force, composée de Mathilde, Celio et Jp. Projet proposé dans le cadre de la formation WCS, projet n°1')">A
-            propos</a>
-        </li>
-        <li>
-          <a href="#" onclick="return confirm ('Fonctionnalité à venir')">Gestion du compte</a>
-        </li>
-        <li><a href="#">Nous contacter</a></li>
-      </ul>
-    </nav>
-  </header>
+  <body>
+    <header>
+      <img
+        src="../public/images/task.png"
+        alt="une liste de tâche en couleur"
+        id="logo"
+      />
+      <h1>TODO LIST</h1>
+      <nav>
+        <img
+          class="bouton_menu"
+          src="../public/images/bouton_menu.png"
+          alt="bouton menu"
+        />
+        <ul class="dropDownMenu">
+          <li>
+            <a
+              href="#"
+              onclick="return confirm
+            ('Projet créé par la team Task Force, composée de Mathilde, Celio et Jp. Projet proposé dans le cadre de la formation WCS, projet n°1')"
+              >A propos</a
+            >
+          </li>
+          <li>
+            <a href="#" onclick="return confirm ('Fonctionnalité à venir')"
+              >Gestion du compte</a
+            >
+          </li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-        <!-- formulaire -->
-        <section id="form-section">
-            <article id="form-article">
-                
-                    <textarea name="" id="add-task" placeholder="Nom de la tâche" rows="2" cols="33" ></textarea>
-                    <div id="status-category-article">
-                        <h3>Statut</h3>
-                            <select name="status-article" id="select-status-article">
-                            <option value="unstarted">Non démarré</option>
-                            <option value="current">En cours</option>
-                            <option value="finished">Terminé</option>
-                            </select>
-                        <button id="send-button">Créer ma tâche</button> 
-                    </div>
-            </article>
-            
-        </section>
+      <!-- formulaire -->
+      <section id="form-section">
+        <article id="form-article">
+          <textarea name=""id="add-task"placeholder="Nom de la tâche"rows="2"cols="33"required="required"></textarea>
+          <div id="status-category-article">
+            <div class="style-form">
+              <h3>Statut</h3>
+              <select name="status-article" id="select-status-article">
+                <div class="option">
+                  <option value="unstarted">Non démarré</option>
+                  <option value="current">En cours</option>
+                  <option value="finished">Terminé</option>
+                </div>
+              </select>
+            </div>
+            <!-- <h3>Catégorie</h3>
+                        <select name="category-article" id="select-category-article">
+                            <option value="Project 1">Projet 1</option>
+                            <option value="Project 2">Projet 2</option>
+                            <option value="Project 3">Projet 3</option>
+                        </select> --->
+            <button  id="send-button"><span>&#x2713;</span></button>
+          </div>
+        </article>
+      </section>
 
-       <section id="filter">
+      <!-- <section id="filter">
             <h3>Filtrer</h3>
             <select name="status-filter" id="select-status-filter"> 
             <option value="" selected>Sélectionner un statut</option>         
@@ -57,37 +80,32 @@
             <option value="current">En cours</option>
             <option value="finished">Terminé</option>
             </select>
-        </section> 
+        </section> -->
 
-    <section class="tasks">
-      <!-- Les taches non commencées -->
-      <!-- <section class="non_demarre">
+      <section class="tasks">
+        <!-- Les taches non commencées -->
+        <!-- <section class="non_demarre">
         <h2>Non demarré</h2>
         <article></article>
       </section> -->
 
-      <!-- Les taches en cours -->
-      <!-- <section class="en_cours">
+        <!-- Les taches en cours -->
+        <!-- <section class="en_cours">
           <h2>En cours</h2>
           <article></article>
         </section> -->
 
-      <!-- Les taches terminées -->
-      <!-- <section class="terminees">
+        <!-- Les taches terminées -->
+        <!-- <section class="terminees">
           <h2>Terminé</h2>
           <article></article>
         </section> -->
-
-    </section>
-
-    <!--test bouton edit -->
-    
-
+      </section>
     </main>
-
     <footer>
       <section>
-        <p>&copy;copyright 2024</p>
+        <p>Copyright &copy; 2024</p>
+        <p>Mentions légales</p>
         <p>Images from <a href="#"></a></p>
         <p>Task Force Team</p>
       </section>

@@ -21,7 +21,7 @@ const deleteButton = document.querySelector; //recupérer ID bouton supprimer
 const menuButton = document.querySelector(".bouton_menu");
 const dropDownMenu = document.querySelector(".dropDownMenu");
 
-menuButton.addEventListener("click",  () => {
+menuButton.addEventListener("click", () => {
 	dropDownMenu.classList.toggle("visible");
 });
 
@@ -44,7 +44,7 @@ function createNewTask() {
 	newElement.idArticle = `task-${taskId}`;
 	newElement.labelTask = labelTask.value;
 	newElement.selectStatus = selectStatus.value;
-	
+
 	taskList.push(newElement);
 
 	return newElement;
@@ -90,7 +90,6 @@ function displayNewTask(taskList) {
 
 	/* label du select */
 
-	
 	/* ajout du textarea */
 
 	const taskTextArea = document.createElement("textarea");
@@ -113,7 +112,7 @@ function displayNewTask(taskList) {
 	const buttonEdit = document.createElement("button");
 	buttonEdit.classList.add("edit-button");
 	buttonEdit.id = newTask.id;
-	buttonEdit.textContent = " Edit ";
+	buttonEdit.textContent = "  ";
 	article.appendChild(buttonEdit);
 
 	/* ecouter edit-button */
@@ -126,17 +125,15 @@ function displayNewTask(taskList) {
 	const buttonDelete = document.createElement("button");
 	buttonDelete.classList.add("delete-button");
 	buttonDelete.id = newTask.id;
-	buttonDelete.textContent = " Delete ";
+	buttonDelete.textContent = "  ";
 	article.appendChild(buttonDelete);
 
 	/* ecouter delete-button */
 
-	buttonDelete.addEventListener("click", () =>{
+	buttonDelete.addEventListener("click", () => {
 		const idValue = `task-${newTask.id}`;
 		deleteTask(idValue);
-	}
-		
-	);
+	});
 
 	//const articleSelectStatus = document.createElement("select");
 	//articleSelectStatus.classList.add("select-status");
@@ -153,32 +150,24 @@ function displayNewTask(taskList) {
 
 const sendButton = document.querySelector("#send-button");
 sendButton.addEventListener("click", () => {
-    const newTask = createNewTask();
-    if (newTask) {
-        displayNewTask(taskList);
-    }
+	const newTask = createNewTask();
+	if (newTask) {
+		displayNewTask(taskList);
+	}
 });
 
+function deleteTask(articleId) {
+	const articleToDelete = document.querySelector(`#${articleId}`);
+	const deleteAlert = confirm(
+		"Etes-vous sûr de vouloir supprimer cette tâche ?",
+	);
+	console.log(taskList);
+	console.log(articleId);
 
-function deleteTask(articleId) { 
-	
-		const articleToDelete = document.querySelector(`#${articleId}`);
-		const deleteAlert = confirm(
-			"Etes-vous sûr de vouloir supprimer cette tâche ?",
-		);
-			console.log(taskList);
-			console.log(articleId);
-
-		if(deleteAlert){
-			articleToDelete.remove();
-			//const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
-			const findArticle = taskList.find(task=>task.idArticle === articleId);
-			console.log(findArticle); 
-		}
-		 
-
-			   
-	
+	if (deleteAlert) {
+		articleToDelete.remove();
+		//const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
+		const findArticle = taskList.find((task) => task.idArticle === articleId);
+		console.log(findArticle);
+	}
 }
-
-
