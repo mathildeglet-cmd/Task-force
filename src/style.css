@@ -21,13 +21,18 @@
 	--title-bg-color: #eaeef8;
 	--title-font: Hind, sans-serif;
 	--text-font: Roboto, sans-serif;
+	--nonDemarre-bg-color: grey;
+	--enCours-bg-color: orange;
+	--terminee-bg-color: green;
 }
 
 * {
 	margin: 0;
 	padding: 0;
 }
-
+body {
+	background-color: #f5f5f5;
+}
 
 #logo {
 	width: 5em;
@@ -36,10 +41,23 @@
 h1 {
 	font-size: 1.5em;
 	color: white;
+	font-family: var(--title-font);
+
+	@media screen and (min-width: 960px) {
+		font-size: 3em;
+	}
 }
 .bouton_menu {
 	height: 3.5em;
 	width: auto;
+
+	@media screen and (min-width: 960px) {
+		height: 4em;
+		width: auto;
+	}
+}
+.bouton_menu:active {
+	transform: translate(0, 3px);
 }
 
 .dropDownMenu {
@@ -49,6 +67,11 @@ h1 {
 	position: absolute;
 	right: 1em;
 	background-color: white;
+	z-index: 1;
+}
+.visible {
+	display: block;
+	color: var(--title-bg-color);
 }
 
 li {
@@ -79,10 +102,16 @@ h2 {
 
 h3 {
 	font-size: 0.8em;
-}
+	font-family: var(--title-font);
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	text-transform: uppercase;
+	color: white;
+	font-style: italic;
 
-#status-category-article select {
-	width: 6em;
+	@media screen and (min-width: 960px) {
+		font-size: 1.2em;
+	}
 }
 
 .status {
@@ -95,22 +124,108 @@ h3 {
 	}
 }
 
-footer {
-	background-color: var(--primary-color);
+.delete-button {
+	border-radius: 50%;
+	height: 3em;
+	width: 3em;
+	background-color: white;
+	border: solid 1px red;
+	box-shadow: -1px 2px 5px 1px;
+	margin-bottom: 1em;
+	margin-top: 1em;
 }
 
-footer p {
-	width: 80vw;
-	margin: auto;
+.delete-button::before {
+	content: "\00274C";
+	font-size: 1.5em;
+}
+.delete-button:active {
+	transform: translate(-2px, 3px);
+}
+.edit-button {
+	border-radius: 50%;
+	width: 3em;
+	height: 3em;
+	background-color: white;
+	border: solid 1px red;
+	box-shadow: -1px 2px 5px 1px;
+}
+.edit-button::before {
+	content: "\01F589";
+	font-size: 2em;
+}
+.edit-button:active {
+	transform: translate(-2px, 3px);
+}
+#taskText {
+	border-radius: 5px;
+	font-size: 2em;
+	color: white;
+	font-weight: bold;
+	width: 87vw;
+	text-transform: uppercase;
+	text-align: left;
+	margin-top: 0.5em;
+
+	@media screen and (min-width: 960px) {
+		width: 28vw;
+	}
+}
+.label-status {
+	text-transform: lowercase;
+	text-transform: capitalize;
+}
+
+.task-nonDemarre {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 1px var(--nonDemarre-bg-color);
+	background-color: var(--nonDemarre-bg-color);
+	border-radius: 5px;
 	font-family: var(--text-font);
-	line-height: 1.5em;
-	font-size: 1.2em;
-	text-align: center;
-}
+	margin: auto;
+	box-shadow: -1px 2px 5px 1px;
+	width: 92vw;
+	margin-top: 1.5em;
 
-.visible {
-	display: block;
-	color: var(--title-bg-color);
+	@media screen and (min-width: 960px) {
+		width: 30vw;
+	}
+}
+.task-enCours {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 1px var(--enCours-bg-color);
+	background-color: var(--enCours-bg-color);
+	border-radius: 5px;
+	font-family: var(--text-font);
+	margin: auto;
+	box-shadow: -1px 2px 5px 1px;
+	width: 92vw;
+	margin-top: 1.5em;
+
+	@media screen and (min-width: 960px) {
+		width: 30vw;
+	}
+}
+.task-termine {
+	border: solid 1px var(--termine-bg-color);
+	background-color: var(--terminee-bg-color);
+	border-radius: 5px;
+	font-family: var(--text-font);
+	margin: auto;
+	margin-top: 1.5em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: -1px 2px 5px 1px;
+	width: 92vw;
+
+	@media screen and (min-width: 960px) {
+		width: 30vw;
+	}
 }
 
 header {
@@ -119,68 +234,125 @@ header {
 	padding: 0.5em;
 	justify-content: space-between;
 	align-items: center;
-}
+	padding-top: 2em;
+	padding-bottom: 2em;
 
-#form-section {
-	margin: 1em;
-	background-color: #9379f8;
-	padding: 0.5em;
+	@media screen and (min-width: 960px) {
+		padding-left: 4em;
+		padding-right: 4em;
+	}
 }
-
+.tasks {
+	@media screen and (min-width: 960px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
 #form-article {
+	background-color: var(--primary-color);
+	width: 90vw;
+	margin: 3vh auto 1vh auto;
+	padding: 1vh;
+	display: flex;
+	flex-direction: column;
 	align-items: center;
-}
+	border-radius: 5px;
+	box-shadow: -1px 2px 5px 1px;
 
-#form-article {
-	align-items: center;
+	@media screen and (min-width: 960px) {
+		width: 40vw;
+		height: 30vh;
+	}
 }
-
 #add-task {
-	width: 20em;
-	height: 2em;
-	margin-bottom: 1em;
-}
+	font-size: 1.1em;
+	font-family: var(--text-font);
+	border-radius: 5px;
+	font-style: italic;
+	box-shadow: -1px 2px 5px 1px;
+	width: 88vw;
+	height: 9vh;
 
+	@media screen and (min-width: 960px) {
+		width: 38vw;
+		font-size: 1.8em;
+	}
+}
 #status-category-article {
 	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5em;
+	flex-direction: row;
+	align-items: center;
+	gap: 4em;
+	@media screen and (min-width: 960px) {
+		display: flex;
+		flex-direction: row;
+		gap: 12em;
+		margin-top: 2em;
+	}
+}
+.style-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid #a896f1;
+	background-color: #a896f1;
+	border-radius: 5px;
+	box-shadow: -1px 2px 5px 1px;
 }
 
-button {
-	all: unset;
+#select-status-article {
+	margin-bottom: 0.5em;
+	font-size: 1em;
+	font-family: var(--text-font);
+	border-radius: 5px;
+
+	@media screen and (min-width: 960px) {
+		width: 15vw;
+		height: 4vh;
+		margin-bottom: 3em;
+		margin-top: 1em;
+	}
 }
 
-button {
-	all: unset;
+.option {
+	width: 30vw;
+	font-size: 1em;
 }
-
 #send-button {
-	background-color: #8cd373;
-	border-radius: 0.5em;
-	width: 20em;
-	height: 3em;
-	padding: 0;
-	font-family: var(--text-font);
-	font-size: 1.2em;
-	text-align: center;
-	width: 20em;
-	height: 3em;
-	padding: 0;
-	font-family: var(--text-font);
-	font-size: 1.2em;
-	text-align: center;
+	border-radius: 50%;
+	height: 4em;
+	width: 4em;
+	margin-top: 0.8em;
+	margin-bottom: 0.8em;
+	background-color: #1bc41b;
+	font-family: var(--title-font);
+	font-weight: bold;
+	font-size: 1em;
+	box-shadow: -1px 2px 5px 1px;
+	border: #1bc41b;
+}
+span {
+	font-size: 2em;
+}
+#send-button:active {
+	transform: translate(0, 5px);
 }
 
-#filter {
-	display: flex;
-	margin: 1em;
-	gap: 1em;
+footer {
+	background-color: var(--primary-color);
+	padding-top: 1em;
+	padding-bottom: 1em;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+	margin-top: 2em;
 }
 
-/*test bouton supprimer*/
-#my-article{
-	display: flex;
-	height:  100px;
-	width: 100;
+footer p {
+	width: 80vw;
+	margin: auto;
+	font-family: var(--text-font);
+	line-height: 1.5em;
+	font-size: 1em;
+	text-align: center;
 }
