@@ -125,33 +125,43 @@ h3 {
 }
 
 .delete-button {
-	border-radius: 50%;
+	border-radius: 30%;
 	height: 3em;
-	width: 3em;
+	width: 5em;
 	background-color: white;
 	border: solid 1px red;
 	box-shadow: -1px 2px 5px 1px;
 	margin-bottom: 1em;
 	margin-top: 1em;
+	margin-left: 1em;;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	background-color: red;
+	font-weight: bold;
 }
 
 .delete-button::before {
-	content: "\00274C";
+	content: "";
 	font-size: 1.5em;
 }
 .delete-button:active {
 	transform: translate(-2px, 3px);
 }
+
 .edit-button {
-	border-radius: 50%;
-	width: 3em;
+	border-radius: 30%;
+	width: 5em;
 	height: 3em;
 	background-color: white;
-	border: solid 1px red;
+	border: solid 1px lightblue;
 	box-shadow: -1px 2px 5px 1px;
+	margin-right: 1em;
+	background-color: lightblue;
+	font-weight: bold;
+	
 }
 .edit-button::before {
-	content: "\01F589";
+	content: "";
 	font-size: 2em;
 }
 .edit-button:active {
@@ -160,7 +170,7 @@ h3 {
 #taskText {
 	border-radius: 5px;
 	font-size: 2em;
-	color: white;
+	color: black;
 	font-weight: bold;
 	width: 87vw;
 	text-transform: uppercase;
@@ -270,12 +280,16 @@ header {
 	border-radius: 5px;
 	font-style: italic;
 	margin-top: 1.1em;
+	margin-bottom: 1.1em;
 	width: 88vw;
 	height: 9vh;
 
 	@media screen and (min-width: 960px) {
 		width: 38vw;
+		height: 10vh;
 		font-size: 1.8em;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 #status-category-article {
@@ -307,16 +321,22 @@ header {
 	border-radius: 5px;
 
 	@media screen and (min-width: 960px) {
-		width: 10vw;
+		width: 8vw;
 		height: 3vh;
 		margin-bottom: 2em;
 		margin-top: 0.5em;
+		text-align: center;
+		margin-left: 1em;
 	}
 }
 
 .option {
 	width: 30vw;
 	font-size: 1em;
+
+	@media screen and (min-width: 960px) {
+		width: 10vw;
+	}
 }
 #send-button {
 	border-radius: 50%;

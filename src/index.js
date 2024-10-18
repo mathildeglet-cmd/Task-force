@@ -12,11 +12,7 @@ let taskId = 0;
 //});
 
 // Supprimer une tâche
-const deleteButton = document.querySelector; //recupérer ID bouton supprimer
-
-/* deleteButton.addEventListener("click", function () {
-
-}) */
+//const deleteButton = document.querySelector; //recupérer ID bouton supprimer
 
 const menuButton = document.querySelector(".bouton_menu");
 const dropDownMenu = document.querySelector(".dropDownMenu");
@@ -47,6 +43,13 @@ function createNewTask() {
 
 	taskList.push(newElement);
 
+	if (!labelTask.value) {
+		alert("Saisir un texte pour créer une tâche");
+		return;
+	}
+
+	labelTask.value = "";
+
 	return newElement;
 }
 
@@ -57,9 +60,6 @@ function displayNewTask(taskList) {
 	const newTask = taskList[lastElment];
 
 	/* ajouter les éléments dans les sections */
-
-	/* 3 - créer un élément select initialisé avec la valeur choisceStatus */
-	/* 4 - créer un élément button avec le label Edit */
 
 	let classTask = "";
 	let labelStatus = "";
@@ -107,26 +107,68 @@ function displayNewTask(taskList) {
 	displayStatus.textContent = `Tâche ${labelStatus}`;
 	article.appendChild(displayStatus);
 
+	/* Div pour agencement des bouton edit/delete */
+
+	/* ajout du select status */
+	const articleSelectStatus = document.createElement("select");
+	articleSelectStatus.name = "edit-name-status";
+	articleSelectStatus.id = "edit-select-status";
+	article.appendChild(articleSelectStatus);
+
+	/* ajouter les options du status */
+
+	let listValues = ["unstarted", "current", "finished"];
+	let listTexUser = ["Non démarré", "En cours", "Terminé"];
+
+	for (let i = 0; i < listTexUser.length; i++) {
+		let optionSelectStatus = document.createElement("option");
+		optionSelectStatus.value = listValues[i];
+		optionSelectStatus.textContent = listTexUser[i];
+		articleSelectStatus.appendChild(optionSelectStatus);
+	}
+
+	const divEditDelete = document.createElement("div");
+	divEditDelete.classList.add("buttonEditDelete");
+	article.appendChild(divEditDelete);
+
 	/* ajout du button edit */
 
 	const buttonEdit = document.createElement("button");
 	buttonEdit.classList.add("edit-button");
 	buttonEdit.id = newTask.id;
-	buttonEdit.textContent = "  ";
-	article.appendChild(buttonEdit);
+	buttonEdit.textContent = "Edit";
+	divEditDelete.appendChild(buttonEdit);
 
 	/* ecouter edit-button */
-	buttonEdit.addEventListener("click", () =>
-		alert(`Edit tache ${newTask.labelTask} ID : ${newTask.id}`),
-	);
+
+	buttonEdit.addEventListener("click", () => {
+		if (buttonEdit.textContent.toLowerCase() === "edit") {
+			taskTextArea.disabled = false;
+			buttonDelete.disabled = true;
+			buttonEdit.textContent = "Save";
+		} else {
+			/* sauvegarder le nouveau llibellé dans taskList */
+			const findTask = `task-${newTask.id}`;
+			const findEditTask = taskList.findIndex(
+				(task) => task.idArticle === findTask,
+			);
+			console.log(findEditTask);
+			taskList[findEditTask].labelTask = taskTextArea.value;
+			taskTextArea.disabled = true;
+			buttonDelete.disabled = false;
+			buttonEdit.textContent = "Edit";
+
+			//article.classList.replace(`${classTask}`, "Nouveau-Statut");
+		}
+	});
 
 	/* ajout du button delete */
 
 	const buttonDelete = document.createElement("button");
 	buttonDelete.classList.add("delete-button");
 	buttonDelete.id = newTask.id;
-	buttonDelete.textContent = "  ";
-	article.appendChild(buttonDelete);
+	buttonDelete.textContent = "Delete";
+	divEditDelete.appendChild(buttonDelete);
 
 	/* ecouter delete-button */
 
@@ -134,16 +176,23 @@ function displayNewTask(taskList) {
 		const idValue = `task-${newTask.id}`;
 		deleteTask(idValue);
 	});
+}
 
-	//const articleSelectStatus = document.createElement("select");
-	//articleSelectStatus.classList.add("select-status");
-	/*  articleSelectStatus.textContent = labelTask.value; */
-	//article.appendChild(articleSelectStatus);
+function deleteTask(articleId) {
+	const articleToDelete = document.querySelector(`#${articleId}`);
+	const deleteAlert = confirm(
+		"Etes-vous sûr de vouloir supprimer cette tâche ?",
+	);
 
-	/* ajouter les options du status */
+	if (deleteAlert) {
+		articleToDelete.remove();
+		const findArticle = taskList.findIndex(
+			(task) => task.idArticle === articleId,
+		);
 
-	//const optionSelectStatus = document.createElement("option");
-	//optionSelectStatus.classList.add("");
+		// suppression de la task dans le tableau tasklist
+		taskList.splice(findArticle, 1);
+	}
 }
 
 /* ecouter send-button */
@@ -155,19 +204,3 @@ sendButton.addEventListener("click", () => {
 		displayNewTask(taskList);
 	}
 });
-
-function deleteTask(articleId) {
-	const articleToDelete = document.querySelector(`#${articleId}`);
-	const deleteAlert = confirm(
-		"Etes-vous sûr de vouloir supprimer cette tâche ?",
-	);
-	console.log(taskList);
-	console.log(articleId);
-
-	if (deleteAlert) {
-		articleToDelete.remove();
-		//const findArticle = taskList.indexOf(() => taskList.idArticle === `${articleId}`);
-		const findArticle = taskList.find((task) => task.idArticle === articleId);
-		console.log(findArticle);
-	}
-}
